@@ -1,6 +1,11 @@
 class AdsController < ApplicationController
   def index
-    @ads = Ad.all
+    if params[:category_id]
+      @category = Category.find(params[:category_id]) 
+      @ads = @category.ads
+    else
+      @ads = Ad.all
+    end
   end
 
   def show
@@ -8,7 +13,12 @@ class AdsController < ApplicationController
   end
 
   def new
-    @ad = Ad.new
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @ad = @category.ads.build
+    else
+      @ad = Ad.new
+    end
   end
 
   def create

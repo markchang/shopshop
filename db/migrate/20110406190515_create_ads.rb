@@ -3,7 +3,7 @@ class CreateAds < ActiveRecord::Migration
     create_table :ads do |t|
       t.string :title
       t.text :description
-      t.decimal :price
+      t.integer :price
       t.string :location
       t.timestamps
     end
