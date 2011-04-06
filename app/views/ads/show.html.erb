@@ -1,0 +1,24 @@
+<% title "Ad" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ad.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @ad.description %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @ad.price %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= @ad.location %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_ad_path(@ad) %> |
+  <%= link_to "Destroy", @ad, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", ads_path %>
+</p>
