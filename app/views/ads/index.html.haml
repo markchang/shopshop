@@ -1,16 +1,10 @@
 - title "#{@category.name}"
 
-%ul
-	- for ad in @ads
-		%li
-			= ad.title
-			= ad.description
-			= ad.price
-			= ad.location
-	
-			= link_to "Show", category_ad_url(@category, ad)
-			= link_to "Edit", edit_category_ad_path(@category, ad)
-			= link_to "Destroy", category_ad_path(@category, ad), :confirm => 'Are you sure?', :method => :delete
-
 %p
 	= link_to "New Ad", new_category_ad_path(@category)
+	|
+	= link_to "Categories", categories_path
+	
+
+- for ad in @ads
+	= render ad

@@ -1,32 +1,14 @@
-- title "Category"
+- title "#{@category.name}"
 
 %p
-	%strong Name:
-	= @category.name
-
-%p
-	%strong Description:
 	= @category.description
 
 %p
 	= link_to "New Ad", new_category_ad_path(@category)
+	|
+	= link_to "Categories", categories_path
 
-%p
-	= link_to "Edit", edit_category_path(@category)
-	= link_to "Destroy", @category, :confirm => 'Are you sure?', :method => :delete
-	= link_to "View All", categories_path
-
+%hr
 %p
 	- for ad in @ads
-		%hr
-		%p 
-			Title: #{ad.title} Description: #{ad.description}
-			Price: #{ad.price}
-			Location: #{ad.location}
-		%p
-			= link_to "Edit", edit_category_ad_path(@category, ad)
-			|
-			= link_to "Destroy", category_ad_path(@category, ad), 
-				:confirm => 'Are you sure?', :method => :delete
-			|
-			= link_to "View All", category_ads_path(@category)
+		= render ad

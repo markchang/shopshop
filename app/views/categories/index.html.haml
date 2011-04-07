@@ -1,13 +1,15 @@
 - title "Categories"
 
 - for category in @categories
-	%p 
-		= link_to "#{category.name}", category
-		(#{category.ads.count})
+	.category-single
+		.category-controls
+			= link_to "Edit", edit_category_path(category)
+			|
+			= link_to "Destroy", category, :confirm => 'Are you sure?', 
+				:method => :delete
+		%p
+			%b= link_to "#{category.name}", category
+			/(#{category.ads.count})
 
-		= link_to "Edit", edit_category_path(category)
-		= link_to "Destroy", category, :confirm => 'Are you sure?', 
-			:method => :delete
-
-
+%hr
 %p= link_to "New Category", new_category_path

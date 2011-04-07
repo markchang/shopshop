@@ -9,6 +9,7 @@ a img {
 }
 
 a {
+  text-decoration: none;
   color: #0000FF;
 }
 
@@ -77,4 +78,30 @@ a {
 .small {
   font-size: 8px;
   display: inline;
+}
+
+.ad-single {
+  background-color: #EBECF5;
+  padding: 1px 5px 1px 5px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+}
+
+.category-single {
+  background-color: #EBECF5;
+  padding: 1px 5px 1px 5px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+}
+
+.ad-controls {
+  float: right;
+  padding: 1px 5px 1px 5px;
+  margin: 10px 0px 10px 0px;
+}
+
+.category-controls {
+  float: right;
+  padding: 1px 5px 1px 5px;
+  margin: 10px 0px 10px 0px;
 }
