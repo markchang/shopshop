@@ -1,0 +1,22 @@
+- title "#{@category.name} Ad"
+
+%p
+	%strong Title:
+	= @ad.title
+
+%p
+	%strong Description: 
+	= @ad.description
+
+%p
+	%strong Price: 
+	= @ad.price
+
+%p
+	%strong Location:
+	= @ad.location
+
+%p
+	= link_to "Edit", edit_category_ad_path(@category, @ad)
+	= link_to "Destroy", category_ad_path(@category, @ad), :confirm => 'Are you sure?', :method => :delete
+	= link_to "View All", category_ads_path(@category)
