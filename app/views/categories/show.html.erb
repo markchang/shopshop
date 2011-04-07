@@ -10,7 +10,26 @@
 </p>
 
 <p>
+	<%= link_to "New Ad", new_category_ad_path(@category) %>
+</p>
+
+<p>
   <%= link_to "Edit", edit_category_path(@category) %> |
   <%= link_to "Destroy", @category, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", categories_path %>
+</p>
+
+<p>
+	<% for ad in @ads %>
+	<hr>
+	<p>Title: <%= ad.title %> Description: <%= ad.description %>
+		Price: <%= ad.price %>
+		Location: <%= ad.location %></p>
+	<p>
+	  <%= link_to "Edit", edit_category_ad_path(@category, ad) %> |
+	  <%= link_to "Destroy", category_ad_path(@category, ad), :confirm => 'Are you sure?', :method => :delete %> |
+	  <%= link_to "View All", category_ads_path(@category) %>
+	</p>
+		
+	<% end %>
 </p>

@@ -1,4 +1,4 @@
-<% title "Ad" %>
+<% title "#{@category.name} Ad" %>
 
 <p>
   <strong>Title:</strong>
@@ -18,7 +18,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_ad_path(@ad) %> |
-  <%= link_to "Destroy", @ad, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", ads_path %>
+  <%= link_to "Edit", edit_category_ad_path(@category, @ad) %> |
+  <%= link_to "Destroy", category_ad_path(@category, @ad), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", category_ads_path(@category) %>
 </p>

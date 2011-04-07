@@ -3,8 +3,9 @@ Shopshop::Application.routes.draw do
     resources :ads
   end
   
-  resources :ads
+  resources :ads, :except => [:index]
 
+  root :to => "categories#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

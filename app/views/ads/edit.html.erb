@@ -3,6 +3,6 @@
 <%= render 'form' %>
 
 <p>
-  <%= link_to "Show", @ad %> |
-  <%= link_to "View All", ads_path %>
+  <%= link_to "Show", category_ad_url(@category, @ad) %> |
+  <%= link_to "View All", category_ads_path(@category) %>
 </p>
