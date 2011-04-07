@@ -1,0 +1,13 @@
+.ad-single
+	.ad-controls
+		= link_to "Edit", edit_category_ad_path(@category, ad)
+		|
+		= link_to "Destroy", category_ad_path(@category, ad), 
+			:confirm => 'Are you sure?', :method => :delete
+	%p 
+		%b= ad.title
+		%br/
+		= number_to_currency ad.price, :precision => 0
+		= ad.location
+	%p
+		= ad.description
